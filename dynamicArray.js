@@ -135,6 +135,25 @@ class dynamicArray {
 
     return value;
   }
+
+  indexOf(value) {
+    for (let i = 0; i < this.size; i++) {
+      if (this.array[i] == value) {
+        return i;
+      }
+    }
+
+    return "value-doesnt-exist";
+  }
+
+  contains(value) {
+    for (let i = 0; i < this.size - 1; i++) {
+      if (this.array[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 function main() {
@@ -285,10 +304,13 @@ function main() {
 
   console.log("\n--- Testing Search (indexOf, contains) ---");
   // --- Implement and then uncomment this section ---
-  // console.log(`Index of 120: ${myArray.indexOf(120)}`); // Should be its current index
-  // console.log(`Index of 500 (not found): ${myArray.indexOf(500)}`); // Should be -1
-  // console.log(`Contains 100: ${myArray.contains(100)}`);
-  // console.log(`Contains 999: ${myArray.contains(999)}`);
+  console.log(
+    `Current state: Size = ${myArray.getSize()}, Capacity = ${myArray.getCapacity()}, Array = ${myArray.getArray()}`,
+  );
+  console.log(`Index of 120: ${myArray.indexOf(120)}`); // Should be its current index
+  console.log(`Index of 500 (not found): ${myArray.indexOf(500)}`); // Should be -1
+  console.log(`Contains 100: ${myArray.contains(100)}`);
+  console.log(`Contains 999: ${myArray.contains(999)}`);
 
   console.log("\n--- Testing Clear ---");
   // --- Implement and then uncomment this section ---
